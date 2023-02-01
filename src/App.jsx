@@ -1,17 +1,20 @@
-// import Table from './components/Table/index';
+import TicketTable from './components/TicketTable/index';
+import StatsCard from './components/Progress/index';
 import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Navigation from './Components/Navigation';
 import TicketForm from './Components/TicketForm';
 
-function App() {
+
+const App = () => {
   return (
    <>
    <Header />
    <Navigation />
    <TicketForm />
-   {/* <Table /> */}
+   <StatsCard />
+   <TicketTable />
    <Footer />
    </>
   );
