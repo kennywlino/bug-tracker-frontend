@@ -1,12 +1,13 @@
+import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import AuthenticationImage from './components/Login';
 import TicketTable from './components/TicketTable/index';
 import StatsCard from './components/Progress/index';
-import './App.css';
-
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import Navigation from './Components/Navigation';
-import TicketForm from './Components/TicketForm';
+import TeamsTable from './components/TeamsTable';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Navigation from './components/Navigation';
+import TicketForm from './components/TicketForm';
 
 
 
@@ -23,6 +24,17 @@ const App = () => {
           }
         />
         <Route
+          path='/'
+          element={
+            <>
+              <Header />
+              <Footer />
+              <Navigation />
+              <TicketForm />
+            </>
+          }
+        />
+        <Route
           path='/dashboard'
           element={
             <>
@@ -35,7 +47,7 @@ const App = () => {
           path='/teams'
           element={
             <>
-            <TeamsTable />
+              <TeamsTable />
             </>
           }
         />
