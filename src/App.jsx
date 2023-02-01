@@ -39,7 +39,7 @@ const App = () => {
           }
         />
         <Route
-          path='/'
+          path='/hero'
           element={
             <>
               {<Hero />}

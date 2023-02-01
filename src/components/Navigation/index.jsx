@@ -1,32 +1,23 @@
 import { Tabs } from '@mantine/core';
-import { Bug } from 'tabler-icons-react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Bug, Dashboard, Home, Users } from 'tabler-icons-react';
+import './styles.css';
 
 const Navigation = () => {
+
+  const navigate = useNavigate();
+  const { tabValue } = useParams();
+
   return (
     <>
-
-
-      <Tabs variant="pills" defaultValue="gallery">
+      <Tabs className='Tabs' color="green" orientation="vertical" variant="pills" defaultValue="hero" value={tabValue} onTabChange={(value) => navigate(`/${value}`)}>
         <Tabs.List>
-          <Tabs.Tab value="gallery" icon={<Bug size={14} />}>Gallery</Tabs.Tab>
-          {/* <Tabs.Tab value="messages" icon={<IconMessageCircle size={14} />}>Messages</Tabs.Tab> */}
-          {/* <Tabs.Tab value="settings" icon={<IconSettings size={14} />}>Settings</Tabs.Tab> */}
+          <Tabs.Tab value="hero" icon={<Home size={14} />}>Home</Tabs.Tab>
+          <Tabs.Tab value="ticket" icon={<Bug size={14} />}>Ticket</Tabs.Tab>
+          <Tabs.Tab value="dashboard" icon={<Dashboard size={14} />}>Dash Board</Tabs.Tab>
+          <Tabs.Tab value="teams" icon={<Users size={14} />}>Teams</Tabs.Tab>
         </Tabs.List>
-
-        <Tabs.Panel value="gallery" pt="xs">
-          Gallery tab content
-        </Tabs.Panel>
-
-        <Tabs.Panel value="messages" pt="xs">
-          Messages tab content
-        </Tabs.Panel>
-
-        <Tabs.Panel value="settings" pt="xs">
-          Settings tab content
-        </Tabs.Panel>
       </Tabs>
-
-
     </>
   );
 };
