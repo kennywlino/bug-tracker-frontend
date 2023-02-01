@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AuthenticationImage from './components/Login';
 import TicketTable from './components/TicketTable/index';
@@ -9,14 +10,26 @@ import Hero from './components/Hero';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import TicketForm from './components/TicketForm';
-import { AppShell, Navbar } from '@mantine/core';
-
+import { AppShell, useMantineTheme } from '@mantine/core';
 
 
 const App = () => {
+  const theme = useMantineTheme();
+  const [opened, setOpened] = useState(false);
   return (
-    <>
-      <Routes>
+    <AppShell
+      styles={{
+        main: { background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], },
+      }}
+      navbarOffsetBreakpoint="sm"
+      asideOffsetBreakpoint="sm"
+      padding="md"
+      layout="alt"
+      navbar={<Navigation p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }} />}
+      header={<Header height={{ base: 50, md: 70 }} p="md"/>}
+      footer={<Footer />}
+    >
+      {<Routes>
         <Route
           path='/login'
           element={
@@ -28,28 +41,19 @@ const App = () => {
         <Route
           path='/'
           element={
-            <AppShell
-              padding="md"
-              layout="alt"
-              navbar={<Navbar width={{ base: 300 }} height={500} p="lg">Navbar content</Navbar>}
-              header={<Header />}
-              footer={<Footer />}
-            >
+            <>
               {<Hero />}
               {/* <Header />
               <Hero />
               <Footer /> */}
-            </AppShell>
+            </>
           }
         />
         <Route
           path='/ticket'
           element={
             <>
-              <Header />
-              <Navigation />
-              <TicketForm />
-              <Footer />
+              {<TicketForm />}
             </>
           }
         />
@@ -57,8 +61,8 @@ const App = () => {
           path='/dashboard'
           element={
             <>
-              <StatsCard />
-              <TicketTable />
+              {<StatsCard />}
+              {<TicketTable />}
             </>
           }
         />
@@ -66,12 +70,12 @@ const App = () => {
           path='/teams'
           element={
             <>
-              <TeamsTable />
+              {<TeamsTable />}
             </>
           }
         />
-      </Routes>
-    </>
+      </Routes>}
+    </AppShell>
   );
 };
 
