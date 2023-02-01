@@ -16,7 +16,7 @@ const useStyles = createStyles((theme) => ({
     minHeight: 900,
     backgroundSize: 'cover',
     backgroundImage:
-      "url(assets/Venus_Flytrap.jpg)",
+      './assets/Venus_Flytrap.jpg',
   },
 
   form: {
@@ -71,6 +71,6 @@ const AuthenticationImage = () => {
       </Paper>
     </div>
   );
-}
+};
 
 export default AuthenticationImage;
