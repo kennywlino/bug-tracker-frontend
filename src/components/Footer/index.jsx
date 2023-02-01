@@ -1,13 +1,13 @@
-import { Footer as mantineFooter } from '@mantine/core';
+import { Footer as MantineFooter } from '@mantine/core';
 
 const Footer = () => {
   return(
-    <mantineFooter
+    <MantineFooter
       height={60} 
       p="lg" 
     >
       <p> &copy;2023 VFT</p>
-    </mantineFooter>
+    </MantineFooter>
   );
 };
 

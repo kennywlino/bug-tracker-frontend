@@ -1,8 +1,6 @@
 import { TextInput, Checkbox, Button, Group, Box, Textarea } from '@mantine/core';
 import { useForm } from '@mantine/form';
 
-
-
 const TicketForm = () => {
 
   // function Demo() {
@@ -64,7 +62,7 @@ const TicketForm = () => {
       </Box>
 
     </>
-  )
+  );
 };
 
 export default TicketForm;
