@@ -4,8 +4,8 @@ import ticketReducer from "./ticketSlice";
 
 const store = configureStore({
   reducer: {
-    user: userReducer,
-    ticket: ticketReducer,
+    users: userReducer,
+    tickets: ticketReducer,
   }
 });
 
