@@ -19,10 +19,10 @@ import AuthComponent from './components/AuthComponent/index'
 
 const App = () => {
   const theme = useMantineTheme();
-  const [opened, setOpened] = useState(false);
+  const [opened, setOpened] = useState(true);
   return (
     <>
-    <AuthProvider>
+   <AuthProvider>
     <Routes>
     <Route
           path='/'
@@ -41,7 +41,7 @@ const App = () => {
           }
         />
       </Routes>
-      {/* <AuthComponent> */}
+      <AuthComponent>
     <AppShell
       styles={{
         main: { background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
@@ -59,9 +59,8 @@ const App = () => {
           path='/ticket'
           element={
             <>
-            {/* <AuthComponent> */}
               {<TicketForm />}
-              {/* </AuthComponent> */}
+
             </>
            
           }
@@ -70,13 +69,13 @@ const App = () => {
           path='/dashboard'
           element={
             <>
-            {/* <AuthComponent> */}
+     
             <div className='charts'>
               {<StatsCard />}
               {<PieChart />}
             </div>
               {<TicketTable />}
-              {/* </AuthComponent> */}
+      
             </>
           }
         />
@@ -84,16 +83,16 @@ const App = () => {
           path='/teams'
           element={
             <>
-            {/* <AuthComponent> */}
+           
               {<StatsControls />}
               {<TeamsTable />}
-            {/* </AuthComponent> */}
+
             </>
           }
         />
       </Routes>}
     </AppShell>
-    {/* </AuthComponent> */}
+    </AuthComponent>
     </AuthProvider>
     </>
   );
