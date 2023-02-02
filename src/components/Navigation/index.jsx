@@ -1,4 +1,4 @@
-import { Tabs } from '@mantine/core';
+import { Tabs, Button } from '@mantine/core';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Bug, Dashboard, Home, Users } from 'tabler-icons-react';
 import './styles.css';
@@ -10,6 +10,7 @@ const Navigation = () => {
 
   return (
     <>
+      <div>
       <Tabs className='Tabs' color="green" orientation="vertical" variant="pills" defaultValue="hero" value={tabValue} onTabChange={(value) => navigate(`/${value}`)}>
         <Tabs.List>
           <Tabs.Tab value="hero" icon={<Home size={14} />}>Home</Tabs.Tab>
@@ -18,6 +19,9 @@ const Navigation = () => {
           <Tabs.Tab value="teams" icon={<Users size={14} />}>Teams</Tabs.Tab>
         </Tabs.List>
       </Tabs>
+
+      <Button ml={15} mt={160} color='gray'>Logout</Button>
+      </div>
     </>
   );
 };

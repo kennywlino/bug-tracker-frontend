@@ -37,7 +37,7 @@ const PieChart = () => {
 
       <RingProgress
         className='RingProgress'
-        size={130}
+        size={200}
         thickness={30}
         sections={[
           { value: 18, color: 'lime' },

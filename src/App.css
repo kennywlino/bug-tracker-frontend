@@ -3,8 +3,9 @@
   }
   
   .charts {
-    margin-left: 16%;
+    margin-left: 5vw;
     display: flex;
+    justify-content: space-evenly;
   }
 
   .App-logo {
