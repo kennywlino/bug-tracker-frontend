@@ -31,6 +31,14 @@ const App = () => {
     >
       {<Routes>
         <Route
+          path='/'
+          element={
+            <>
+              <AuthenticationImage />
+            </>
+          }
+        />
+        <Route
           path='/login'
           element={
             <>
