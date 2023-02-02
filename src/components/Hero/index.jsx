@@ -78,6 +78,8 @@ const Hero = () => {
   const { classes } = useStyles();
 
   return (
+    <>
+
       <div className={classes.root}>
         <Container size="lg">
           <div className={classes.inner}>
@@ -92,12 +94,12 @@ const Hero = () => {
                 >
                   VFT
                 </Text>
-                </Title>
-  
+              </Title>
+
               <Text className={classes.description} mt={30}>
                 An app designed by developers for developers. Allows for teams to manage and track bugs, errors, and issues in your projects.
               </Text>
-  
+
               <Button
                 variant="gradient"
                 gradient={{ from: 'green', to: 'navy' }}
@@ -110,7 +112,8 @@ const Hero = () => {
           </div>
         </Container>
       </div>
-    );
+    </>
+  );
 };
 
 export default Hero;

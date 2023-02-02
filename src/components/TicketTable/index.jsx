@@ -5,7 +5,7 @@ const useStyles = createStyles((theme) => ({
       padding: theme.spacing.xl,
       width: '80%',
       margin: '50px',
-  }
+  },
 }));
 
 const TicketTable = () => {
@@ -30,6 +30,7 @@ const TicketTable = () => {
         </tr>
     ));
     return(
+      <>
         <Table classcreatedBy={classes.table} striped highlightOnHover withColumnBorders>
         <thead>
         <tr>
@@ -43,7 +44,8 @@ const TicketTable = () => {
       </thead>
       <tbody>{rows}</tbody>
         </Table>
-    )
-}
+      </>
+    );
+};
 
 export default TicketTable;

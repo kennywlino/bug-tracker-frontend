@@ -29,6 +29,8 @@ const StatsCard = () => {
     const { classes } = useStyles();
 
     return (
+        <>
+        
         <Paper radius="md" withBorder className={classes.card} mt={ICON_SIZE / 3}>
             <ThemeIcon color={'green'} className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE}>
                 <Bug
@@ -61,6 +63,7 @@ const StatsCard = () => {
                 <Badge color={'gray'} size="sm">4 days left</Badge>
             </Group>
         </Paper>
+        </>
     );
 };
 

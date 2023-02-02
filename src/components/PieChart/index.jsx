@@ -27,6 +27,7 @@ const PieChart = () => {
   const { classes } = useStyles();
 
   return (
+  <>
 
     <Paper radius="md" withBorder className={classes.card} mt={ICON_SIZE / 3}>
 
@@ -57,6 +58,7 @@ const PieChart = () => {
         <Text size="sm">Trace : 18%</Text>
       </Group>
     </Paper>
+  </>
 
   );
 };
