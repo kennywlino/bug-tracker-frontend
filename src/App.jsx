@@ -10,6 +10,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import TicketForm from './components/TicketForm';
+import PieChart from './components/PieChart';
 import { AppShell, useMantineTheme } from '@mantine/core';
 
 
@@ -62,6 +63,7 @@ const App = () => {
           element={
             <>
               {<StatsCard />}
+              {<PieChart />}
               {<TicketTable />}
             </>
           }
