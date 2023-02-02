@@ -11,12 +11,12 @@ import {
 } from '@mantine/core';
 
 
+
 const useStyles = createStyles((theme) => ({
   wrapper: {
     minHeight: 900,
     backgroundSize: 'cover',
-    backgroundImage:
-      './assets/Venus_Flytrap.jpg',
+    backgroundImage: 'url(https://cdn.britannica.com/50/157550-050-56DA0685/Venus-flytrap-traps-insects.jpg)',
   },
 
   form: {
@@ -58,13 +58,13 @@ const AuthenticationImage = () => {
         <TextInput label="Email address" placeholder="hello@gmail.com" size="md" />
         <PasswordInput label="Password" placeholder="Your password" mt="md" size="md" />
         <Checkbox label="Keep me logged in" mt="xl" size="md" />
-        <Button fullWidth mt="xl" size="md">
+        <Button color={'green'} fullWidth mt="xl" size="md">
           Login
         </Button>
 
         <Text align="center" mt="md">
           Don&apos;t have an account?{' '}
-          <Anchor href="#" weight={700} onClick={(event) => event.preventDefault()}>
+          <Anchor color={'green'} href="#" weight={700} onClick={(event) => event.preventDefault()}>
             Register
           </Anchor>
         </Text>

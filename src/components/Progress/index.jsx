@@ -62,6 +62,6 @@ const StatsCard = () => {
             </Group>
         </Paper>
     );
-}
+};
 
 export default StatsCard;

@@ -111,6 +111,6 @@ const Hero = () => {
         </Container>
       </div>
     );
-}
+};
 
 export default Hero;

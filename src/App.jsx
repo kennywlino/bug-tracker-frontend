@@ -20,7 +20,7 @@ const App = () => {
   return (
     <AppShell
       styles={{
-        main: { background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], },
+        main: { background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], }
       }}
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
@@ -70,8 +70,10 @@ const App = () => {
           path='/dashboard'
           element={
             <>
+            <div className='charts'>
               {<StatsCard />}
               {<PieChart />}
+            </div>
               {<TicketTable />}
             </>
           }
