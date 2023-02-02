@@ -1,23 +1,29 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
-const initialState = {
-  loggedIn: false,
-  currentUser: {},
-};
+const REACT_APP_SERVER = process.env.REACT_APP_SERVER;
 
-export const userSlice = createSlice({
-  name: 'user',
+const initialState = [];
+
+const usersSlice = createSlice({
+  name: 'users',
   initialState,
   reducers: {
-    setLoggedIn: (state) => {
-      state.loggedIn = true;
-    },
-    setCurrentUser: (state, action) => {
-      state.currentUser = action.payload;
-    },
-  },
-});
+    setUsers: (state, action) => action.payload,
+    updateUsers: (state, action) => state.map(user => (user.username !== action.payload.username ? user : user.payload)),
+  }
+})
 
-export const { setLoggedIn, setCurrentUser } = userSlice.actions;
+const { setUsers, updateUsers } = usersSlice.actions;
 
-export default userSlice.reducer;
+export const getUsers = () => async (dispatch, getState) => {
+  let response = await axios.get(`${REACT_APP_SERVER}/users`);
+  dispatch(setUsers(response.data)); 
+}
+
+export const adjustUsers = (user) => async (dispatch, getState) => {
+  let response = await axios.put(`${REACT_APP_SERVER}/users/${user.id}`, user);
+  dispatch(updateUsers(response.data));
+}
+
+export default usersSlice.reducer;
