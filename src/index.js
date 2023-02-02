@@ -4,9 +4,11 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import { MantineProvider } from '@mantine/core';
+import Users from './components/Users';
+
 
 // Redux imports
-import { store } from './store/store';
+import store from './store';
 import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,11 +16,12 @@ root.render(
   <>
   <React.StrictMode>
     <Provider store={store}>
-     <BrowserRouter>
+      <Users />
+     {/* <BrowserRouter>
         <MantineProvider withGlobalStyles withNormalizeCSS>
           <App />
         </MantineProvider>
-      </BrowserRouter> 
+      </BrowserRouter>  */}
     </Provider>
     
   </React.StrictMode>

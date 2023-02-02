@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-
-
 export const reset = () => {
   return {
     type: 'RESET',
@@ -9,44 +7,44 @@ export const reset = () => {
   };
 };
 
-export const addItem = (ticketForm) => {
+export const addItem = (ticket) => {
   return {
     type: 'ADD', 
-    payload: ticketForm,
+    payload: ticket,
   };
 };
 
-export const removeItem = (ticketForm) => {
+export const removeItem = (ticket) => {
   return {
     type: 'REMOVE', 
-    payload: ticketForm,
+    payload: ticket,
   };
 };
 
-export const setProducts = (ticketForm) => {
+export const setTickets = (ticket) => {
   return {
     type: 'SET-TICKETS',
-    payload: ticketForm,
+    payload: ticket,
   };
 };
 
-export const setCategories = (ticketForm) => {
+export const setCategories = (ticket) => {
   return {
-    type: 'SET-CATAGORIES',
-    payload: ticketForm,
+    type: 'SET-CATEGORIES',
+    payload: ticket,
   };
 };
 
-export const updateProduct = (ticketForm) => {
+export const updateTicket = (ticket) => {
   return {
     type: 'UPDATE-TICKETS',
-    payload: ticketForm,
+    payload: ticket,
   };
 };
 
 export const getTickets = () => async (dispatch, getState) => {
   let response = await axios.get('http://localhost:3000');
-  dispatch(setProducts(response.data.results));
+  dispatch(setTickets(response.data.results));
 };
 
 export const getCategories = () => async (dispatch, getState) => {
@@ -54,8 +52,8 @@ export const getCategories = () => async (dispatch, getState) => {
   dispatch(setCategories(response.data.results));
 };
 
-export const adjustTickets = (ticketForm) => async (dispatch, getState) => {
-  ticketForm.ready--;
-  let response = await axios.put(`http://localhost:3000/${ticketForm._id}`, ticketForm);
-  dispatch(updateProduct(response.data));
+export const adjustTickets = (ticket) => async (dispatch, getState) => {
+  ticket.ready--;
+  let response = await axios.put(`http://localhost:3000/${ticket._id}`, ticket);
+  dispatch(updateTicket(response.data));
 };
