@@ -16,12 +16,11 @@ root.render(
   <>
   <React.StrictMode>
     <Provider store={store}>
-      <Users />
-     {/* <BrowserRouter>
+     <BrowserRouter>
         <MantineProvider withGlobalStyles withNormalizeCSS>
           <App />
         </MantineProvider>
-      </BrowserRouter>  */}
+      </BrowserRouter> 
     </Provider>
     
   </React.StrictMode>
