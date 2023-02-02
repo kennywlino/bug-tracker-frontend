@@ -30,11 +30,11 @@ const StatsCard = () => {
 
     return (
         <Paper radius="md" withBorder className={classes.card} mt={ICON_SIZE / 3}>
-            <ThemeIcon className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE}>
+            <ThemeIcon color={'green'} className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE}>
                 <Bug
                     size={48}
                     strokeWidth={2}
-                    color={'black'}
+                    color={'white'}
                 />
             </ThemeIcon>
 
@@ -54,11 +54,11 @@ const StatsCard = () => {
                 </Text>
             </Group>
 
-            <Progress value={62} mt={5} />
+            <Progress color={'green'} value={62} mt={5} />
 
             <Group position="apart" mt="md">
                 <Text size="sm">20 / 32 bugs solved</Text>
-                <Badge size="sm">4 days left</Badge>
+                <Badge color={'gray'} size="sm">4 days left</Badge>
             </Group>
         </Paper>
     );

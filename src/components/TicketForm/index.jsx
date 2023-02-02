@@ -46,17 +46,19 @@ const TicketForm = () => {
           <Checkbox
             mt="md"
             label="Priority"
+            color={'red'}
             {...form.getInputProps('termsOfService', { type: 'checkbox' })}
             />
 
           <Checkbox
             mt="md"
             label="Non Priority"
-            {...form.getInputProps('termsOfService', { type: 'checkbox' })}
+            color={'yellow'}
+            // {...form.getInputProps('termsOfService', { type: 'checkbox' })}
           />
 
           <Group position="right" mt="md">
-            <Button type="submit">Submit</Button>
+            <Button color={'green'} type="submit">Submit</Button>
           </Group>
         </form>
       </Box>
