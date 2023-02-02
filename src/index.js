@@ -17,8 +17,9 @@ root.render(
         <MantineProvider withGlobalStyles withNormalizeCSS>
           <App />
         </MantineProvider>
-      </BrowserRouter>``
+      </BrowserRouter> 
     </Provider>
+    
   </React.StrictMode>
 );
 

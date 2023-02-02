@@ -1,3 +1,6 @@
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/Auth/index';
+
 import {
   Paper,
   createStyles,
@@ -9,8 +12,6 @@ import {
   Text,
   Anchor,
 } from '@mantine/core';
-
-
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -48,7 +49,20 @@ const useStyles = createStyles((theme) => ({
 
 const AuthenticationImage = () => {
   const { classes } = useStyles();
+  
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLoginClick = () => {
+    window.location = '/dashboard';
+}
+  const {
+    loggedIn,
+    login,
+} = useContext(AuthContext);
+
   return (
+    <>
     <div className={classes.wrapper}>
       <Paper className={classes.form} radius={0} p={30}>
         <Title order={2} className={classes.title} align="center" mt="md" mb={50}>
@@ -58,7 +72,7 @@ const AuthenticationImage = () => {
         <TextInput label="Email address" placeholder="hello@gmail.com" size="md" />
         <PasswordInput label="Password" placeholder="Your password" mt="md" size="md" />
         <Checkbox label="Keep me logged in" mt="xl" size="md" />
-        <Button color={'green'} fullWidth mt="xl" size="md">
+        <Button onClick={handleLoginClick} color={'green'} fullWidth mt="xl" size="md">
           Login
         </Button>
 
@@ -70,6 +84,7 @@ const AuthenticationImage = () => {
         </Text>
       </Paper>
     </div>
+    </>
   );
 };
 
