@@ -1,5 +1,26 @@
-# bug-tracker-frontend
+# VFT Bug Tracker
 
+## Team: Camilla Rees, Hunter Fehr, Kenny Lino, Jacob Dang, Trace Dugar
 
-- a project bh kenny, camilla, trace, jacob, and hunter.
-- in this application you will be able to track bugs and progress made on addressing the issues
+## Description
+
+## Links and Resources
+
+ [Front End Github Repository](https://github.com/chjkt-bug-tracker/bug-tracker-frontend)
+ [Netlify](https://vft.netlify.app/)
+ [Back End Github Repository](https://github.com/chjkt-bug-tracker/bug-tracker-backend)
+ [SQL Database](https://dashboard.render.com/d/dpg-cfc5ec9gp3jokp7k2kng-a)
+
+### Running the application
+
+- `npm start`
+
+### Features and Routes
+
+- Feature 1:
+
+#### Tests
+
+N/A
+
+#### UML / Diagrams

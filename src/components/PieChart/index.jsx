@@ -32,7 +32,7 @@ const PieChart = () => {
 
 
       <Text align="center" weight={700} className={classes.title}>
-        Tream Progress
+        Team Progress
       </Text>
 
       <RingProgress
