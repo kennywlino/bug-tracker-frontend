@@ -1,12 +1,24 @@
 import { Tabs, Button } from '@mantine/core';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Bug, Dashboard, Home, Users } from 'tabler-icons-react';
+import { AuthContext } from '../../context/Auth/index';
+import { useContext } from 'react';
 import './styles.css';
 
 const Navigation = () => {
 
   const navigate = useNavigate();
   const { tabValue } = useParams();
+
+  const handleLogoutClick = (e) => {
+    e.preventDefault();
+    logout();
+    navigate('/login');
+}
+
+const {
+  logout,
+} = useContext(AuthContext);
 
   return (
     <>
@@ -20,7 +32,7 @@ const Navigation = () => {
           </Tabs.List>
         </Tabs>
 
-        <Button ml={15} className="Logout" color='gray'>Logout</Button>
+        <Button ml={15} onClick={(e) => handleLogoutClick(e)} className="Logout" color='gray'>Logout</Button>
       </div>
     </>
   );

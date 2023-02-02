@@ -1,5 +1,7 @@
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/Auth/index';
+import { useToggle, upperFirst } from '@mantine/hooks';
+import { useNavigate } from 'react-router-dom';
 
 import {
   Paper,
@@ -9,7 +11,6 @@ import {
   Checkbox,
   Button,
   Title,
-  Text,
   Anchor,
 } from '@mantine/core';
 
@@ -48,17 +49,26 @@ const useStyles = createStyles((theme) => ({
 
 const AuthenticationImage = () => {
   const { classes } = useStyles();
+
+  const [type, toggle] = useToggle(['login', 'register']);
   
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLoginClick = () => {
-    window.location = '/dashboard';
+  const navigate = useNavigate();
+
+  const handleLoginClick = (e) => {
+    e.preventDefault();
+    login(username, password);
+    navigate('/dashboard');
 }
+
   const {
-    loggedIn,
     login,
 } = useContext(AuthContext);
+
+ 
+console.log(username, password);
 
   return (
     <>
@@ -67,20 +77,20 @@ const AuthenticationImage = () => {
         <Title order={2} className={classes.title} align="center" mt="md" mb={50}>
           Welcome back to VFT!
         </Title>
-
-        <TextInput label="Email address" placeholder="hello@gmail.com" size="md" />
-        <PasswordInput label="Password" placeholder="Your password" mt="md" size="md" />
+        {type === 'register' && (
+          <TextInput label="Your name" placeholder="Your name" size="md" />
+        )}
+        <TextInput label="Your Username" placeholder="Your username" size="md" onChange={(event) => setUsername(event.currentTarget.value)} />
+        <PasswordInput label="Your Password" placeholder="Your password" mt="md" size="md" onChange={(event) => setPassword(event.currentTarget.value)}/>
         <Checkbox label="Keep me logged in" mt="xl" size="md" />
-        <Button onClick={handleLoginClick} color={'green'} fullWidth mt="xl" size="md">
-          Login
+        <Button type="submit" onClick={(e) => handleLoginClick(e)} color={'green'} fullWidth mt="xl" size="md">
+          {upperFirst(type)}
         </Button>
-
-        <Text align="center" mt="md">
-          Don&apos;t have an account?{' '}
-          <Anchor color={'green'} href="#" weight={700} onClick={(event) => event.preventDefault()}>
-            Register
+          <Anchor color={'green'} onClick={() => toggle()} weight={700}>
+          {type === 'register'
+              ? 'Already have an account? Login'
+              : "Don't have an account? Register"}
           </Anchor>
-        </Text>
       </Paper>
     </div>
     </>
