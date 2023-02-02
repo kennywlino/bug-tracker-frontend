@@ -18,7 +18,6 @@ const { setUsers, updateUsers } = usersSlice.actions;
 
 export const getUsers = () => async (dispatch, getState) => {
   let response = await axios.get(`${REACT_APP_SERVER}/users`);
-  console.log('Response:', response.data);
   dispatch(setUsers(response.data)); 
 }
 
