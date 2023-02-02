@@ -5,7 +5,7 @@ const useStyles = createStyles((theme) => ({
     padding: theme.spacing.xl,
     width: '80%',
     margin: '50px',
-  }
+  },
 }));
 
 const TeamsTable = () => {
@@ -28,6 +28,8 @@ const TeamsTable = () => {
     </tr>
   ));
   return (
+    <>
+    
     <Table classcreatedBy={classes.table} striped highlightOnHover withColumnBorders>
       <thead>
         <tr>
@@ -39,7 +41,8 @@ const TeamsTable = () => {
       </thead>
       <tbody>{rows}</tbody>
     </Table>
-  )
-}
+    </>
+  );
+};
 
 export default TeamsTable;
