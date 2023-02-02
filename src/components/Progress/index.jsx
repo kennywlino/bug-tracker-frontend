@@ -38,14 +38,14 @@ const StatsCard = () => {
                 />
             </ThemeIcon>
 
-            <Text align="center" weight={700} className={classes.title}>
+            <Text mt={30} align="center" weight={700} className={classes.title}>
                 Debugging Challenge
             </Text>
-            <Text color="dimmed" align="center" size="sm">
+            <Text mt={20} color="dimmed" align="center" size="sm">
                 32 bugs solved / week
             </Text>
 
-            <Group position="apart" mt="xs">
+            <Group position="apart" mt={40}>
                 <Text size="sm" color="dimmed">
                     Progress
                 </Text>
@@ -54,9 +54,9 @@ const StatsCard = () => {
                 </Text>
             </Group>
 
-            <Progress color={'green'} value={62} mt={5} />
+            <Progress color={'green'} value={62} mt={15} />
 
-            <Group position="apart" mt="md">
+            <Group position="apart" mt={70}>
                 <Text size="sm">20 / 32 bugs solved</Text>
                 <Badge color={'gray'} size="sm">4 days left</Badge>
             </Group>
