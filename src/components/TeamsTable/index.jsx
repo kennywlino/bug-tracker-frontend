@@ -12,21 +12,19 @@ const TeamsTable = () => {
   const { classes } = useStyles();
 
   const data = [
-    { teamMember: 'Camilla', priority: 1, dateCreated: '1/26/2023', createdBy: 'Camilla', status: 'Resolved', isShared: false },
-    { teamMember: 'Kenny', priority: 2, dateCreated: '1/26/2023', createdBy: 'Kenny', status: 'Resolved', isShared: false },
-    { teamMember: 'Hunter', priority: 3, dateCreated: '1/26/2023', createdBy: 'Hunter', status: 'Resolved', isShared: false },
-    { teamMember: 'Trace', priority: 4, dateCreated: '1/26/2023', createdBy: 'Trace', status: 'Resolved', isShared: false },
-    { teamMember: 'Jacob', priority: 5, dateCreated: '1/26/2023', createdBy: 'Jacob', status: 'Resolved', isShared: false },
+    { teamMember: 'Camilla', bugsCreated: 2, dateCreated: '1/26/2023', bugsSolved: '18' },
+    { teamMember: 'Kenny', bugsCreated: 2, dateCreated: '1/26/2023', bugsSolved: '22' },
+    { teamMember: 'Hunter', bugsCreated: 3, dateCreated: '1/26/2023', bugsSolved: '17' },
+    { teamMember: 'Trace', bugsCreated: 4, dateCreated: '1/26/2023', bugsSolved: '16' },
+    { teamMember: 'Jacob', bugsCreated: 3, dateCreated: '1/26/2023', bugsSolved: '17' },
   ];
 
   const rows = data.map((data) => (
     <tr key={data.createdBy}>
       <td>{data.teamMember}</td>
-      <td>{data.createdBy}</td>
+      <td>{data.bugsSolved}</td>
       <td>{data.dateCreated}</td>
-      <td>{data.priority}</td>
-      <td>{data.status}</td>
-      <td>{data.isShared}</td>
+      <td>{data.bugsCreated}</td>
     </tr>
   ));
   return (

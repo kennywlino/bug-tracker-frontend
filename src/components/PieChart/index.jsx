@@ -38,27 +38,27 @@ const PieChart = () => {
       <RingProgress
         className='RingProgress'
         size={130}
-        thickness={39}
+        thickness={30}
         sections={[
-          { value: 7, color: 'lime' },
-          { value: 14, color: 'green' },
+          { value: 18, color: 'lime' },
+          { value: 18, color: 'green' },
           { value: 21, color: 'gray' },
-          { value: 28, color: 'darkgray' },
-          { value: 30, color: 'darkgreen' },
+          { value: 22, color: 'darkgray' },
+          { value: 21, color: 'darkgreen' },
         ]}
       />
 
 
       <Group className='Names' position="apart" mt="md">
-        <Text size="sm">Trace : 7%</Text>
-        <Text size="sm">Hunter : 14%</Text>
+        <Text size="sm">Camilla : 22%</Text>
         <Text size="sm">Jacob : 21%</Text>
-        <Text size="sm">Camilla : 28%</Text>
-        <Text size="sm">Kenny : 30%</Text>
+        <Text size="sm">Kenny : 21%</Text>
+        <Text size="sm">Hunter : 18%</Text>
+        <Text size="sm">Trace : 18%</Text>
       </Group>
     </Paper>
 
-  )
-}
+  );
+};
 
 export default PieChart;
