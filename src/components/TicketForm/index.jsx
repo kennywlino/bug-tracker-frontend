@@ -19,7 +19,7 @@ const TicketForm = () => {
   return (
     <>
 
-      <Box sx={{ maxWidth: 300 }} mx="auto">
+      <Box data-testid='ticketForm' sx={{ maxWidth: 300 }} mx="auto">
         <form onSubmit={form.onSubmit((values) => console.log(values))}>
           <TextInput
             withAsterisk
