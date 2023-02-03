@@ -1,7 +1,7 @@
-import { createStyles, Table } from '@mantine/core';
+import { createStyles, Table, Button } from '@mantine/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getTickets } from '../../store/ticketSlice';
+import { getTickets, deleteTicket } from '../../store/ticketSlice';
 
 const useStyles = createStyles((theme) => ({
   table: {
@@ -21,8 +21,7 @@ const TicketTable = () => {
     dispatch(getTickets());
   }, []);
 
-
-  console.log('Tickets:', tickets);
+  // console.log('Tickets:', tickets);
 
   const { classes } = useStyles();
 
@@ -32,10 +31,11 @@ const TicketTable = () => {
     <td>{ticket.createdAt}</td>
     <td>{String(ticket.priority)}</td>
     <td>{ticket.notes}</td>
+    <td><Button variant='compact' color='red' onClick={deleteTicket(ticket)}>X</Button></td>
   </tr>
   ));
 
-  console.log(rows, '');
+  // console.log(rows, '');
 
   return (
     <>
@@ -55,3 +55,4 @@ const TicketTable = () => {
 };
 
 export default TicketTable;
+
