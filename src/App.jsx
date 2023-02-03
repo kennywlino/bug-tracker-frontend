@@ -14,7 +14,8 @@ import TicketForm from './components/TicketForm';
 import PieChart from './components/PieChart';
 import { AppShell, useMantineTheme } from '@mantine/core';
 import AuthProvider from './context/Auth/index';
-import AuthComponent from './components/AuthComponent/index'
+import AuthComponent from './components/AuthComponent/index';
+import TeamMember from './components/TeamMember';
 
 
 const App = () => {
@@ -87,6 +88,14 @@ const App = () => {
               {<StatsControls />}
               {<TeamsTable />}
 
+            </>
+          }
+        />
+         <Route
+          path='/teammember'
+          element={
+            <>
+              {<TeamMember />}
             </>
           }
         />
