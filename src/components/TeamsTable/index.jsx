@@ -30,7 +30,7 @@ const TeamsTable = () => {
   return (
     <>
     
-    <Table data-testid='teamsTable' classcreatedBy={classes.table} striped highlightOnHover withColumnBorders>
+    <Table classcreatedBy={classes.table} striped highlightOnHover withColumnBorders>
       <thead>
         <tr>
           <th>Team Member</th>
