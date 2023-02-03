@@ -26,13 +26,13 @@ const TicketTable = () => {
 
   const { classes } = useStyles();
 
-  // const rows = data.map((data) => (
-  //   <tr key={data.issueType}>
-  //     <td>{data.dateCreated}</td>
-  //     <td>{data.priority}</td>
-  //     <td>{data.notes}</td>
-  //   </tr>
-  // ));
+  const rows = tickets.map((ticket) => (
+    <tr key={ticket.issueType}>
+      <td>{ticket.dateCreated}</td>
+      <td>{ticket.priority}</td>
+      <td>{tickets.notes}</td>
+    </tr>
+  ));
   return (
     <>
       <Table data-testid='ticketTable' classcreatedBy={classes.table} striped highlightOnHover withColumnBorders>
@@ -46,7 +46,7 @@ const TicketTable = () => {
             <th>Shared</th>
           </tr>
         </thead>
-        {/* <tbody>{rows}</tbody> */}
+        <tbody>{rows}</tbody>
       </Table>
     </>
   );
