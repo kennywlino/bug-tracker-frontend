@@ -3,13 +3,14 @@ import jwt_decode from 'jwt-decode';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
 
+
 const cookie = new Cookies();
 
 export const AuthContext = React.createContext();
 
 const AuthProvider = ({ children }) => {
 
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [error, setError] = useState(null);
 
@@ -38,7 +39,7 @@ const AuthProvider = ({ children }) => {
     console.log('response data');
     const config = {
       url: '/signin',
-      baseURL: 'https://chjkt-bug-tracker-backend.onrender.com',
+      baseURL: process.env.REACT_APP_SERVER,
       method: 'post',
       auth: {username, password}
     }
