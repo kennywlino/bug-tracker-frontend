@@ -11,19 +11,19 @@ const ticketSlice = createSlice({
   reducers: {
     setTickets: (state, action) => action.payload,
     updateTicket: (state, action) => state.map(ticket => (ticket.name !== action.payload.name ? ticket : action.payload)),
-  },
-});
+  }
+})
 
 const { setTickets, updateTicket } = ticketSlice.actions;
 
 export const getTickets = () => async ( dispatch, getState ) => {
-  let response = await axios.get(`${REACT_APP_SERVER}/tickets`);
-  dispatch(setTickets(response.data.results));
+  let response = await axios.get(`${REACT_APP_SERVER}/api/tickets`);
+  dispatch(setTickets(response.data));
 };
 
 export const adjustTickets = (ticket) => async (dispatch, getState) => {
   let updatedTicket = {...ticket, available: ticket.available -1};
-  let response = await axios.put(`${REACT_APP_SERVER}/tickets/${ticket.id}`, updatedTicket);
+  let response = await axios.put(`${REACT_APP_SERVER}/api/tickets/${ticket.id}`, updatedTicket);
   dispatch(updateTicket(response.data));
 };
 
