@@ -8,6 +8,7 @@ const Header = () => {
   return (
     <>
       <MantineHeader
+        data-testid='header'
         height={60}
         p="lg"
       >
