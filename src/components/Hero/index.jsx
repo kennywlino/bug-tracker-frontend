@@ -85,7 +85,9 @@ const Hero = () => {
     <>
 
       <div className={classes.root}>
-        <Container size="xl">
+        <Container 
+        data-testid='hero'
+        size="xl">
           <div className={classes.inner}>
             <div className={classes.content}>
               <Title className={classes.title}>

@@ -31,7 +31,7 @@ const TicketTable = () => {
     ));
     return(
       <>
-        <Table classcreatedBy={classes.table} striped highlightOnHover withColumnBorders>
+        <Table data-testid='ticketTable' classcreatedBy={classes.table} striped highlightOnHover withColumnBorders>
         <thead>
         <tr>
           <th>Issue Type</th>

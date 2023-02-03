@@ -37,6 +37,7 @@ const PieChart = () => {
       </Text>
 
       <RingProgress
+        data-testid='pieChart'
         className='RingProgress'
         size={200}
         thickness={30}

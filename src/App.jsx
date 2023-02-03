@@ -14,8 +14,9 @@ import TicketForm from './components/TicketForm';
 import PieChart from './components/PieChart';
 import { AppShell, useMantineTheme } from '@mantine/core';
 import AuthProvider from './context/Auth/index';
-import AuthComponent from './components/AuthComponent/index';
-import TeamMember from './components/TeamMember';
+import AuthComponent from './components/AuthComponent/index'
+import Users from './components/Users';
+
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
   const [opened, setOpened] = useState(true);
   return (
     <>
+
    <AuthProvider>
     <Routes>
     <Route
@@ -44,6 +46,7 @@ const App = () => {
       </Routes>
       <AuthComponent>
     <AppShell
+      data-testid="appshell"
       styles={{
         main: { background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
       }}
@@ -77,32 +80,78 @@ const App = () => {
             </div>
               {<TicketTable />}
       
-            </>
-          }
-        />
-        <Route
-          path='/teams'
-          element={
-            <>
-           
-              {<StatsControls />}
-              {<TeamsTable />}
+      <AuthProvider>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                {<Hero />}
+              </>
+            }
+          />
+          <Route
+            path='/login'
+            element={
+              <>
+                <AuthenticationImage />
+              </>
+            }
+          />
+        </Routes>
+        <AuthComponent>
+          <AppShell
+            styles={{
+              main: { background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
+            }}
+            navbarOffsetBreakpoint="sm"
+            asideOffsetBreakpoint="sm"
+            padding="md"
+            layout="alt"
+            navbar={<Navigation p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }} />}
+            header={<Header height={{ base: 50, md: 70 }} p="md" />}
+            footer={<Footer />}
+          >
+            {<Routes>
+              <Route
+                path='/ticket'
+                element={
+                  <>
+                    {<TicketForm />}
 
-            </>
-          }
-        />
-         <Route
-          path='/teammember'
-          element={
-            <>
-              {<TeamMember />}
-            </>
-          }
-        />
-      </Routes>}
-    </AppShell>
-    </AuthComponent>
-    </AuthProvider>
+                  </>
+
+                }
+              />
+              <Route
+                path='/dashboard'
+                element={
+                  <>
+
+                    <div className='charts'>
+                      {<StatsCard />}
+                      {<PieChart />}
+                    </div>
+                    {<TicketTable />}
+
+                  </>
+                }
+              />
+              <Route
+                path='/teams'
+                element={
+                  <>
+
+                    {<StatsControls />}
+                    {<TeamsTable />}
+
+                  </>
+                }
+              />
+            </Routes>}
+          </AppShell>
+        </AuthComponent>
+      </AuthProvider>
     </>
   );
 };

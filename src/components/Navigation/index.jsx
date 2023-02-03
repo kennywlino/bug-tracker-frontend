@@ -21,7 +21,9 @@ const { logout } = useContext(AuthContext);
   return (
     <>
       <div>
+
         <Tabs className='Tabs' color="green" orientation="vertical" variant="pills" defaultValue="dashboard" value={tabValue} onTabChange={(value) => navigate(`/${value}`)}>
+
           <Tabs.List>
             <Tabs.Tab value="hero" icon={<Home size={14} />}>Home</Tabs.Tab>
             <Tabs.Tab value="ticket" icon={<Bug size={14} />}>Ticket</Tabs.Tab>
