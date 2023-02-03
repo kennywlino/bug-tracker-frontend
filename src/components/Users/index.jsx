@@ -16,8 +16,8 @@ const Users = () => {
     dispatch(getTickets());
   }, []);
 
-  console.log('USERS:', users); 
-  console.log('Tickets:', tickets); 
+  // console.log('USERS:', users); 
+  // console.log('Tickets:', tickets); 
 }
 
 export default Users;
