@@ -35,7 +35,7 @@ const TeamMember = () => {
             </Indicator>
             <Text weight='bold'>Hunter Fehr</Text>
             <Text weight='lighter'>
-              Strengths:
+              Strengths: Driven, Collborative, Backend Development
             </Text>
           </Group>
         </Paper>
@@ -68,7 +68,7 @@ const TeamMember = () => {
             </Indicator>
             <Text weight='bold'>Kenny W. Lino</Text>
             <Text weight='lighter'>
-              Strengths:
+              Strengths: Problem Solving, Debugging, Responsible
             </Text>
           </Group>
         </Paper>
@@ -82,7 +82,7 @@ const TeamMember = () => {
             </Indicator>
             <Text weight='bold'>Trace Dugar</Text>
             <Text weight='lighter'>
-              Strengths: Front-end, styling, design
+              Strengths: Front-end, Styling, Design
             </Text>
           </Group>
         </Paper>
@@ -96,7 +96,7 @@ const TeamMember = () => {
             </Indicator>
             <Text weight='bold'>Ryan</Text>
             <Text weight='lighter'>
-              Strengths: Teaching, Kindness, Bananas
+              Strengths: Teaching, Kindness, Bananas or Potato
             </Text>
           </Group>
         </Paper>

@@ -3,17 +3,16 @@ import { useForm } from '@mantine/form';
 
 const TicketForm = () => {
 
-  // function Demo() {
+
   const form = useForm({
     initialValues: {
-      email: '',
-      termsOfService: false,
+      teamMember: '',
+      issueType: '',
+      notes: '',
+      priority: false,
     },
 
 
-    validate: {
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-    },
   });
 
   return (
@@ -25,37 +24,31 @@ const TicketForm = () => {
             withAsterisk
             label="Team Member Name:"
             placeholder="Name"
-            {...form.getInputProps('email')}
+            {...form.getInputProps('teamMember')}
           />
 
           <TextInput
             withAsterisk
             label="Issue:"
             placeholder="Bug Title"
-            // {...form.getInputProps('email')}
+            {...form.getInputProps('issueType')}
           />
 
           <Textarea
             withAsterisk
             label="Describe Issue:"
-            placeholder="Bug Discription"
+            placeholder="Bug Description"
             autosize
             minRows={2}
+            {...form.getInputProps('notes')}
           />
 
           <Checkbox
             mt="md"
             label="Priority"
             color={'red'}
-            {...form.getInputProps('termsOfService', { type: 'checkbox' })}
+            {...form.getInputProps('priority', { type: 'checkbox' })}
             />
-
-          <Checkbox
-            mt="md"
-            label="Non Priority"
-            color={'yellow'}
-            // {...form.getInputProps('termsOfService', { type: 'checkbox' })}
-          />
 
           <Group position="right" mt="md">
             <Button color={'green'} type="submit">Submit</Button>
