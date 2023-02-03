@@ -121,7 +121,7 @@ const useStyles = createStyles((theme) => ({
 
 const data = [
   { icon: BugOff, label: 'Bugs Resolved' },
-  { icon: Bug, label: 'Bugs Unresolved' },
+  { icon: Bug, label: 'Bugs Remaining' },
 ];
 
 const StatsControls = () => {
@@ -134,7 +134,7 @@ const StatsControls = () => {
       <div>
         <Text className={classes.label}>{stat.label}</Text>
         <Text size="xs" className={classes.count}>
-          <span className={classes.value}>{Math.floor(Math.random() * 6 + 4)} bugs</span> / 10 bugs
+          <span className={classes.value}>{Math.floor(Math.random() * 50 + 4)} bugs</span> / 100 bugs per week
         </Text>
       </div>
     </Paper>

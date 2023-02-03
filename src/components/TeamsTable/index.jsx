@@ -12,18 +12,18 @@ const TeamsTable = () => {
   const { classes } = useStyles();
 
   const data = [
-    { teamMember: 'Camilla', bugsCreated: 2, dateCreated: '1/26/2023', bugsSolved: '18' },
-    { teamMember: 'Kenny', bugsCreated: 2, dateCreated: '1/26/2023', bugsSolved: '22' },
-    { teamMember: 'Hunter', bugsCreated: 3, dateCreated: '1/26/2023', bugsSolved: '17' },
-    { teamMember: 'Trace', bugsCreated: 4, dateCreated: '1/26/2023', bugsSolved: '16' },
-    { teamMember: 'Jacob', bugsCreated: 3, dateCreated: '1/26/2023', bugsSolved: '17' },
+    { teamMember: 'Camilla', bugsCreated: 2, priority: 'Yes', bugsSolved: '18' },
+    { teamMember: 'Kenny', bugsCreated: 2, priority: '', bugsSolved: '22' },
+    { teamMember: 'Hunter', bugsCreated: 3, priority: 'Yes', bugsSolved: '17' },
+    { teamMember: 'Trace', bugsCreated: 4, priority: 'Yes', bugsSolved: '16' },
+    { teamMember: 'Jacob', bugsCreated: 3, priority: '', bugsSolved: '17' },
   ];
 
   const rows = data.map((data) => (
     <tr key={data.createdBy}>
       <td>{data.teamMember}</td>
       <td>{data.bugsSolved}</td>
-      <td>{data.dateCreated}</td>
+      <td>{data.priority}</td>
       <td>{data.bugsCreated}</td>
     </tr>
   ));
@@ -35,7 +35,7 @@ const TeamsTable = () => {
         <tr>
           <th>Team Member</th>
           <th># of Bugs Solved</th>
-          <th>Top Priority Bug</th>
+          <th>Has a Top Priority Bug</th>
           <th># of Bugs Created</th>
         </tr>
       </thead>
