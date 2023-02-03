@@ -129,7 +129,7 @@ const StatsControls = () => {
   const [date, setDate] = useState(new Date(2023, 1, 3));
 
   const stats = data.map((stat) => (
-    <Paper className={classes.stat} radius="md" shadow="md" p="xs" key={stat.label}>
+    <Paper data-testid='teamsProgress' className={classes.stat} radius="md" shadow="md" p="xs" key={stat.label}>
       <stat.icon size={32} className={classes.icon} stroke={1.5} />
       <div>
         <Text className={classes.label}>{stat.label}</Text>

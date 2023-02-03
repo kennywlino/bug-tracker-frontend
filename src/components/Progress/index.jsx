@@ -31,7 +31,7 @@ const StatsCard = () => {
     return (
         <>
         
-        <Paper radius="md" withBorder className={classes.card} mt={ICON_SIZE / 3}>
+        <Paper data-testid='progress' radius="md" withBorder className={classes.card} mt={ICON_SIZE / 3}>
             <ThemeIcon color={'green'} className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE}>
                 <Bug
                     size={48}

@@ -23,6 +23,61 @@ const App = () => {
   const [opened, setOpened] = useState(true);
   return (
     <>
+
+   <AuthProvider>
+    <Routes>
+    <Route
+          path='/'
+          element={
+            <>
+              {<Hero />}
+            </>
+          }
+        />
+        <Route
+          path='/login'
+          element={
+            <>
+              <AuthenticationImage />
+            </>
+          }
+        />
+      </Routes>
+      <AuthComponent>
+    <AppShell
+      data-testid="appshell"
+      styles={{
+        main: { background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
+      }}
+      navbarOffsetBreakpoint="sm"
+      asideOffsetBreakpoint="sm"
+      padding="md"
+      layout="alt"
+      navbar={<Navigation p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }} />}
+      header={<Header height={{ base: 50, md: 70 }} p="md"/>}
+      footer={<Footer />}
+    >
+      {<Routes>
+        <Route
+          path='/ticket'
+          element={
+            <>
+              {<TicketForm />}
+
+            </>
+           
+          }
+        />
+        <Route
+          path='/dashboard'
+          element={
+            <>
+     
+            <div className='charts'>
+              {<StatsCard />}
+              {<PieChart />}
+            </div>
+              {<TicketTable />}
       
       <AuthProvider>
         <Routes>
