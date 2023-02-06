@@ -84,7 +84,7 @@ console.log(username, password);
         )}
         <TextInput label="Your Username" placeholder="Your username" size="md" onChange={(event) => setUsername(event.currentTarget.value)} />
         <PasswordInput label="Your Password" placeholder="Your password" mt="md" size="md" onChange={(event) => setPassword(event.currentTarget.value)}/>
-        <Checkbox label="Keep me logged in" mt="xl" size="md" />
+        <Checkbox color={'green'} label="Keep me logged in" mt="xl" size="md" />
         <Button type="submit" onClick={(e) => handleLoginClick(e)} color={'green'} fullWidth mt="xl" size="md">
           {upperFirst(type)}
         </Button>
