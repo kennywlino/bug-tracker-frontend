@@ -7,6 +7,7 @@ const Footer = () => {
       <MantineFooter
         data-testid='footer'
         height={0}
+        mt={100}
         pb={45}
         pl='md'
       >
