@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import TicketForm from './components/TicketForm';
 import PieChart from './components/PieChart';
-import { AppShell, useMantineTheme } from '@mantine/core';
+import { AppShell, Grid, useMantineTheme } from '@mantine/core';
 import AuthProvider from './context/Auth/index';
 import AuthComponent from './components/AuthComponent/index';
 import TeamMember from './components/TeamMember/index';
@@ -49,12 +49,11 @@ const App = () => {
               main: { background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
             }}
             navbarOffsetBreakpoint="sm"
-            asideOffsetBreakpoint="sm"
             padding="md"
             layout="alt"
-            navbar={<Navigation p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }} />}
+            navbar={<Navigation p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 300, lg: 500 }} />}
             header={<Header height={{ base: 50, md: 70 }} p="md" />}
-            footer={<Footer />}
+            footer={<Footer hiddenBreakpoint="sm" hidden={!opened}/>}
           >
             {<Routes>
               <Route
@@ -62,7 +61,6 @@ const App = () => {
                 element={
                   <>
                     {<TicketForm />}
-
                   </>
 
                 }
@@ -71,12 +69,12 @@ const App = () => {
                 path='/dashboard'
                 element={
                   <>
-
-                    <div className='charts'>
-                      {<StatsCard />}
-                      {<PieChart />}
-                    </div>
-                    {<TicketTable />}
+                    {<Grid className='charts' grow>
+                    <Grid.Col span={2}>{<StatsCard />}</Grid.Col>
+                    <Grid.Col span={2}>{<PieChart />}</Grid.Col>
+                    </Grid>}
+                   {<TicketTable />}
+                   
 
                   </>
                 }

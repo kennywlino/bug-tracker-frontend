@@ -7,20 +7,27 @@ const useStyles = createStyles((theme) => ({
   card: {
     position: 'relative',
     overflow: 'visible',
-    padding: theme.spacing.xl,
-    paddingTop: theme.spacing.xl,
+    padding: theme.spacing.md,
+    paddingTop: theme.spacing.md,
     width: '250px',
-    margin: '50px',
+    margin: '10%',
   },
 
   RingProgress: {
     align: 'center',
+    padding: 0,
+    margin: 0,
   },
 
   title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     lineHeight: 1,
   },
+  
+  text: {
+    padding: '0%',
+    lineHeight: 1,
+},
 }));
 
 const PieChart = () => {
@@ -51,12 +58,12 @@ const PieChart = () => {
       />
 
 
-      <Group className='Names' position="apart" mt="md">
-        <Text size="sm">Camilla : 22%</Text>
-        <Text size="sm">Jacob : 21%</Text>
-        <Text size="sm">Kenny : 21%</Text>
-        <Text size="sm">Hunter : 18%</Text>
-        <Text size="sm">Trace : 18%</Text>
+      <Group className='Names' position="apart" mt="md" padding='0' margin='0'>
+        <Text className={classes.text} size="sm">Camilla : 22%</Text>
+        <Text className={classes.text} size="sm">Jacob : 21%</Text>
+        <Text className={classes.text} size="sm">Kenny : 21%</Text>
+        <Text className={classes.text} size="sm">Hunter : 18%</Text>
+        <Text className={classes.text} size="sm">Trace : 18%</Text>
       </Group>
     </Paper>
   </>
