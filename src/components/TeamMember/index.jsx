@@ -7,11 +7,11 @@ const TeamMember = () => {
   const [openedOne, setOpenedOne] = useState(false);
 
 
-  // This is the component that contains all of the team member data. Data such as their display picture, an online idicator which is green and pulsing to indiciate the user is currently online or gray to show that they are offline. The container per team memeber also has their name and strengths. The team member drop down buttons have been labeled and there are only 2 teams in this example.  The code has been labeled as follows per user from top to bottom of their container: Indicator, Profile Picture, Team Memeber Name, and Team Memeber Strengths.
+  // This is the component that contains all of the team member data. Data such as their display picture, an online idicator which is green and pulsing to indiciate the user is currently online or gray to show that they are offline. The container per team member also has their name and strengths. The team member drop down buttons have been labeled and there are only 2 teams in this example.  The code has been labeled as follows per user from top to bottom of their container: Indicator, Profile Picture, Team Member Name, and Team Member Strengths.
 
   return (
     <>
-      {/* ----- Team DropDown button ----- */}
+      {/* ----- Team DropDown button 1 ----- */}
       <Button color="green" onClick={() => setOpened((o) => !o)}>
         Team 1
       </Button>
@@ -25,7 +25,7 @@ const TeamMember = () => {
                 <User size={24} />
               </Avatar>
             </Indicator>
-            {/* ------ Team Memeber Name ------ */}
+            {/* ------ Team Member Name ------ */}
             <Text weight='bold'>Camilla Rees</Text>
             {/* ------ Team Member Strengths ------- */}
             <Text weight='lighter'>
@@ -70,7 +70,7 @@ const TeamMember = () => {
           </Group>
         </Paper>
       </Collapse>
-      {/* ------ Team DropDown button ------ */}
+      {/* ------ Team DropDown button 2 ------ */}
       <Button color="green" onClick={() => setOpenedOne((o) => !o)}>
         Team 2
       </Button>
@@ -98,7 +98,7 @@ const TeamMember = () => {
             {/* ----- Indicator Dot ------ */}
             <Indicator color="grey" size={11}>
               {/* ------ Profile Picture ------ */}
-              <Avatar src="https://media.licdn.com/dms/image/D5635AQEDVZX90tp4ew/profile-framedphoto-shrink_200_200/0/1675706130592?e=1676311200&v=beta&t=cVbBcd9NqZ2QuHQwRCFshxrJmIZ2gydrFHCT8VvVaw8" radius="sm">
+              <Avatar src="https://media.licdn.com/dms/image/D5603AQE9oo3ANL8mxw/profile-displayphoto-shrink_200_200/0/1675706129995?e=1681344000&v=beta&t=oUuFS--24x2EqVZVfsITD6MNPAIPnYY891uZr3rmg5Y" radius="sm">
                 <User size={24} />
               </Avatar>
             </Indicator>
