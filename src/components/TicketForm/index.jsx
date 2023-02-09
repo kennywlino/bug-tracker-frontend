@@ -13,6 +13,7 @@ const TicketForm = () => {
       issueType: '',
       notes: '',
       priority: false,
+      isResolved: false,
     },
 
 
