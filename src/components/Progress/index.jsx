@@ -42,6 +42,9 @@ const StatsCard = () => {
       dispatch(getTickets());
     }, []);
 
+    const resolvedTickets = tickets.filter(ticket => ticket.isResolved).length;
+    const unresolvedTickets = tickets.filter(ticket => !ticket.isResolved).length;
+
     const { classes } = useStyles();
 
     return (
@@ -60,7 +63,7 @@ const StatsCard = () => {
                 Debugging Challenge
             </Text>
             <Text mt={20} color="dimmed" align="center" size="sm" className={classes.text}>
-                32 bugs solved / week
+                100 bugs solved / week
             </Text>
 
             <Group position="apart" mt={40}>
@@ -68,14 +71,14 @@ const StatsCard = () => {
                     Progress
                 </Text>
                 <Text size="sm" color="dimmed" className={classes.text}>
-                    62%
+                {Math.floor(resolvedTickets / (resolvedTickets + unresolvedTickets) * 100)}%
                 </Text>
             </Group>
 
             <Progress color={'green'} value={62} mt={15} />
 
             <Group position="apart" mt={70}>
-                <Text size="sm" className={classes.text}>20 / 32 bugs solved</Text>
+                <Text size="sm" className={classes.text}> {resolvedTickets} / {resolvedTickets + unresolvedTickets} bugs solved</Text>
                 <Badge color={'gray'} size="sm">4 days left</Badge>
             </Group>
         </Paper>

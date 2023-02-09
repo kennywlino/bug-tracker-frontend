@@ -1,7 +1,8 @@
-import { createStyles, Table, Button, Checkbox } from '@mantine/core';
+import { createStyles, Table, Button, Select, Checkbox } from '@mantine/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getTickets, deleteTicket } from '../../store/ticketSlice';
+import { Filter } from 'tabler-icons-react';
 import axios from 'axios';
 
 const REACT_APP_SERVER = process.env.REACT_APP_SERVER
@@ -15,6 +16,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const TicketTable = () => {
+
   const dispatch = useDispatch();
   const { tickets } = useSelector(state => state);
   console.log(tickets);
@@ -25,9 +27,9 @@ const TicketTable = () => {
   }, []);
 
   function handleResolvedCheck(ticket) {
-    const values = { ...ticket, isResolved: !ticket.isResolved };
+    const value = { ...ticket, isResolved: !ticket.isResolved };
     axios
-      .post(`${REACT_APP_SERVER}/api/tickets`, values)
+      .put(`${REACT_APP_SERVER}/api/tickets/${ticket.id}`, value)
       .then(response => console.log(response))
       .catch(err => console.log(err))
   }
@@ -35,7 +37,6 @@ const TicketTable = () => {
   function handleDelete(ticket) {
     dispatch(deleteTicket(ticket));
   }
-
 
   const { classes } = useStyles();
 
@@ -54,14 +55,15 @@ const TicketTable = () => {
       <td>{ticket.notes}</td>
       <td>
         <Button
-          variant='compact'
+          compact
+          size='xs'
           color='red'
           onClick={() => handleDelete(ticket)}>
           X
         </Button>
       </td>
     </tr>
-    
+
   ));
 
   return (
@@ -69,11 +71,68 @@ const TicketTable = () => {
       <Table data-testid='ticketTable' className={classes.table} striped highlightOnHover withColumnBorders>
         <thead>
           <tr>
-            <th>Resolved</th>
-            <th>Issue Type</th>
-            <th>Date Created</th>
-            <th>Priority</th>
+            <th>Resolved
+            <Select
+                icon={ <Filter
+                  size={18}
+                  strokeWidth={2}
+                  color={'black'}
+                />}
+                placeholder='filter'
+                data={[
+                  { value: 'filterAscending', label: 'Filter ascending' },
+                  { value: 'filterDescending', label: 'Filter descending' },
+                ]}>
+               
+              </Select>
+            </th>
+            <th>Issue Type
+            <Select
+                icon={ <Filter
+                  size={18}
+                  strokeWidth={2}
+                  color={'black'}
+                />}
+                placeholder='filter'
+                data={[
+                  { value: 'filterAscending', label: 'Filter ascending' },
+                  { value: 'filterDescending', label: 'Filter descending' },
+                ]}>
+               
+              </Select>
+            </th>
+            <th>Date Created
+              <Select
+                icon={ <Filter
+                  size={18}
+                  strokeWidth={2}
+                  color={'black'}
+                />}
+                placeholder='filter'
+                data={[
+                  { value: 'filterAscending', label: 'Filter ascending' },
+                  { value: 'filterDescending', label: 'Filter descending' },
+                ]}>
+               
+              </Select>
+            </th>
+            <th>Priority
+            <Select
+                icon={ <Filter
+                  size={18}
+                  strokeWidth={2}
+                  color={'black'}
+                />}
+                placeholder='filter'
+                data={[
+                  { value: 'filterAscending', label: 'Filter ascending' },
+                  { value: 'filterDescending', label: 'Filter descending' },
+                ]}>
+               
+              </Select>
+            </th>
             <th>Notes</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>
