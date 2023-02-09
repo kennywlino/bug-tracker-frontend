@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const REACT_APP_SERVER = process.env.REACT_APP_SERVER;
+
 export const reset = () => {
   return {
     type: 'RESET',
@@ -43,17 +45,17 @@ export const updateTicket = (ticket) => {
 };
 
 export const getTickets = () => async (dispatch, getState) => {
-  let response = await axios.get('https://chjkt-bug-tracker-backend.onrender.com');
+  let response = await axios.get({REACT_APP_SERVER});
   dispatch(setTickets(response.data.results));
 };
 
 export const getCategories = () => async (dispatch, getState) => {
-  let response = await axios.get('https://chjkt-bug-tracker-backend.onrender.com');
+  let response = await axios.get({REACT_APP_SERVER});
   dispatch(setCategories(response.data.results));
 };
 
 export const adjustTickets = (ticket) => async (dispatch, getState) => {
   ticket.ready--;
-  let response = await axios.put(`https://chjkt-bug-tracker-backend.onrender.com/${ticket._id}`, ticket);
+  let response = await axios.put(`${REACT_APP_SERVER}/${ticket._id}`, ticket);
   dispatch(updateTicket(response.data));
 };
