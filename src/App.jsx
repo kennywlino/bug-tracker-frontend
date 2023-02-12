@@ -12,10 +12,11 @@ import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import TicketForm from './components/TicketForm';
 import PieChart from './components/PieChart';
-import { AppShell, Grid, useMantineTheme } from '@mantine/core';
+import { AppShell, Grid, useMantineTheme, Center } from '@mantine/core';
 import AuthProvider from './context/Auth/index';
 import AuthComponent from './components/AuthComponent/index';
 import TeamMember from './components/TeamMember/index';
+import Activity from './components/Activity/index';
 
 
 
@@ -69,11 +70,17 @@ const App = () => {
                 path='/dashboard'
                 element={
                   <>
-                    {<Grid className='charts' grow>
+                  { <Center >
+                    {<Grid className='charts' gutter={40} grow>
+                    <Grid.Col span={2}>{<Activity />}</Grid.Col>
                     <Grid.Col span={2}>{<StatsCard />}</Grid.Col>
                     <Grid.Col span={2}>{<PieChart />}</Grid.Col>
                     </Grid>}
+                    </Center>}
+                    { <Center >
                    {<TicketTable />}
+                   </Center>}
+                  
                    
 
                   </>

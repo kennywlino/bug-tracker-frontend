@@ -24,12 +24,12 @@ const useStyles = createStyles((theme) => ({
 
     title: {
         fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-        lineHeight: 1,
+        lineHeight: 1.5,
     },
 
     text: {
-        padding: '0%',
-        lineHeight: 1,
+        padding: '.6%',
+        lineHeight: 1.5,
     },
 }));
 
