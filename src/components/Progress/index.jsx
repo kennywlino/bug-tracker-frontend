@@ -40,7 +40,7 @@ const StatsCard = () => {
     useEffect(() => {
   
       dispatch(getTickets());
-    }, []);
+    }, [dispatch]);
 
     const resolvedTickets = tickets.filter(ticket => ticket.isResolved).length;
     const unresolvedTickets = tickets.filter(ticket => !ticket.isResolved).length;
