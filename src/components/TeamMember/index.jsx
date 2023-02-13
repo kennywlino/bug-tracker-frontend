@@ -39,7 +39,7 @@ const TeamMember = () => {
             {/* ----- Indicator Dot ------ */}
             <Indicator color="green" size={11} processing>
               {/* ------ Profile Picture ------ */}
-              <Avatar src="https://media.licdn.com/dms/image/D5635AQHrTZIEq_zhOw/profile-framedphoto-shrink_800_800/0/1675223227746?e=1676311200&v=beta&t=FiOMU2-bC67lljL13qrKusCiHG6G1S9Y_XHr9je334g" radius="sm">
+              <Avatar src="https://media.licdn.com/dms/image/D5635AQHrTZIEq_zhOw/profile-framedphoto-shrink_200_200/0/1675223227746?e=1676926800&v=beta&t=ie8xcIC9RkQZKv08go9U52wbF5DBgwEpQGJ8pB9ntJM" radius="sm">
                 <User size={24} />
               </Avatar>
             </Indicator>
