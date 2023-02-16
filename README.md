@@ -19,7 +19,7 @@ Bug tracker designed to help development teams document current bugs and their s
 
 ### Features and Routes
 - Feature 1: Hero page
-![Hero Page](assets/dashboard_page.png)
+![Hero Page](assets/hero_page.png)
 
 - Feature 2: Login handled by bearer auth.
 ![Login Screen](assets/login_screen.png)
