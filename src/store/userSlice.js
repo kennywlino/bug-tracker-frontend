@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const REACT_APP_SERVER = process.env.REACT_APP_SERVER;
+const REACT_APP_SERVER = import.meta.env.VITE_APP_SERVER;
 
 const initialState = [];
 

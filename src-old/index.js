@@ -6,7 +6,6 @@ import './index.css';
 import { MantineProvider } from '@mantine/core';
 import Users from './components/Users';
 
-
 // Redux imports
 import store from './store';
 import { Provider } from 'react-redux';

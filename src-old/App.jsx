@@ -25,7 +25,7 @@ const App = () => {
   const [opened, setOpened] = useState(true);
   return (
     <>
-      {/* <AuthProvider> */}
+      <AuthProvider>
         <Routes>
           <Route
             path='/'
@@ -44,7 +44,7 @@ const App = () => {
             }
           />
         </Routes>
-        {/* <AuthComponent> */}
+        <AuthComponent>
           <AppShell
             styles={{
               main: { background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
@@ -52,7 +52,7 @@ const App = () => {
             navbarOffsetBreakpoint="sm"
             padding="md"
             layout="alt"
-            // navbar={<Navigation p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 300, lg: 500 }} />}
+            navbar={<Navigation p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 300, lg: 500 }} />}
             header={<Header height={{ base: 50, md: 70 }} p="md" />}
             footer={<Footer hiddenBreakpoint="sm" hidden={!opened}/>}
           >
@@ -109,8 +109,8 @@ const App = () => {
               />
             </Routes>}
           </AppShell>
-        {/* </AuthComponent>
-      </AuthProvider> */}
+        </AuthComponent>
+      </AuthProvider>
     </>
   );
 };

@@ -77,7 +77,7 @@ console.log(username, password);
       data-testid='login'
       className={classes.form} radius={0} p={30}>
         <Title order={2} className={classes.title} align="center" mt="md" mb={50}>
-          Welcome back to VFT!
+          back to VFT!
         </Title>
         {type === 'register' && (
           <TextInput label="Your name" placeholder="Your name" size="md" />

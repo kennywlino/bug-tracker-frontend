@@ -2,7 +2,7 @@ import { TextInput, Checkbox, Button, Group, Box, Textarea } from '@mantine/core
 import { useForm } from '@mantine/form';
 import axios from 'axios';
 
-const REACT_APP_SERVER = process.env.REACT_APP_SERVER
+const REACT_APP_SERVER = import.meta.env.REACT_APP_SERVER
 
 const TicketForm = () => {
 

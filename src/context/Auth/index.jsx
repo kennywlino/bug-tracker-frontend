@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
     console.log('response data');
     const config = {
       url: '/signin',
-      baseURL: process.env.REACT_APP_SERVER,
+      baseURL: import.meta.env.REACT_APP_SERVER,
       method: 'post',
       auth: {username, password}
     }
